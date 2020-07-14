@@ -26,6 +26,6 @@ int main(void)
 	if (i == N ) {
 		cout << 0;
 	}
-	
+
 	return 0;
 }
