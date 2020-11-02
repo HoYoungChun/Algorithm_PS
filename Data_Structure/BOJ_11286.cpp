@@ -121,4 +121,7 @@ void push(int num) {
             break;
         }
     }
+ 
 }
+
+
