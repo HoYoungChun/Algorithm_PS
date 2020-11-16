@@ -22,3 +22,4 @@ int main(void) {
 
 	cout << min({dp[N][0], dp[N][1], dp[N][2]}) << '\n';
 }
+
