@@ -21,4 +21,6 @@ int main(void) {
 		if (num >= 1) { cout << '1'; t = 0;}
 		else if (t == 0) cout << '0';
 	}
+	if (str == "0")
+		cout << 0;
 }
