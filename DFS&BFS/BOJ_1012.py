@@ -19,10 +19,10 @@ for _ in range(T):
   worm = 0 #필요한 지렁이 수
   M,N,K = map(int,input().split())
 
-  #배추 심어진 위치 저장하는 Adjacent Matrix
+  #배추 심어진 위치 저장하는 2차원 리스트
   area = [[0]*N for _ in range(M)]
 
-  #Adjacent Matrix에서 방문여부 Check용
+  #2차원 리스트에서 방문여부 Check용
   visited = [[False]*N for _ in range(M)]
 
   #input으로 주어지는 배추 위치 저장
