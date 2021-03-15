@@ -1,7 +1,20 @@
 from collections import deque #bfs에서 큐 쓰기위해
+import sys
+sys.setrecursionlimit(10**6)
 
 dx=[0,0,1,-1]
 dy=[1,-1,0,0] #상하좌우 for문위해
+
+def dfs(now_x, now_y):
+  global now_count
+  now_count+=1 #영역넓이 1증가
+
+  for i in range(4):#상하좌우
+      new_x,new_y=now_x+dx[i],now_y+dy[i] #새로운 x,y좌표
+      if (0<=new_x<M) and (0<=new_y<N): #범위안에 있고 
+        if maps[new_x][new_y]==0 and not visited[new_x][new_y]: #0이면서 방문X일때
+          visited[new_x][new_y]=True #방문처리
+          dfs(new_x,new_y)
 
 def bfs(q,now_count):
   while q: #경로있는 vertex 다 방문할때까지
@@ -41,8 +54,10 @@ for i in range(M):
 
       now_count=0 #영역의 넓이 저장할 변수
       visited[i][j]=True #방문처리
-      q=deque([[i,j]]) #시작 vertex 큐에 넣기
-      area_countings.append(bfs(q,now_count)) #인접한애들 방문처리, 개수 return
+      #q=deque([[i,j]]) #시작 vertex 큐에 넣기
+      #area_countings.append(bfs(q,now_count)) #인접한애들 방문처리, 개수 return
+      dfs(i,j)
+      area_countings.append(now_count)
 
 print(area_num) #나눠지는 영역개수 출력
 for a in sorted(area_countings): #각 영역의 넓이 오름차순 정렬
