@@ -66,14 +66,14 @@ return counts.most_common(1)[0][0]
 
 
 ### 5. 그룹 애너그램
-* dictionary의 key는 immutable 자료형만 가능하다.(string, int, tuple) cf. mutable: (list, dictionary)
+* dictionary의 key는 immutable 자료형만 가능하다.(string, int, tuple) cf. mutable: (list, dictionary, set)
 * immutable 객체는 call by reference, mutable 객체는 call by value로 동작한다.
 * sorted()에 문자열을 전달하면 결과를 리스트로 전달해서 join()으로 합쳐야 한다.
 ```python
 str="hello"
 ''.join(sorted(str)) #ehllo
 ```
-* 리스트 자료형에 제공되는 sort()는 제자리 정렬로 입력을 출력이 덮어 씌우고, sorted()는 정렬 결과를 별도로 리턴한다.
+* 리스트 자료형에 제공되는 sort()는 제자리 정렬로 입력을 출력이 덮어 씌우고, 시퀀스 자료형에 제공되는 sorted()는 정렬 결과를 별도로 리턴한다.
 * sort()와 sorted() 모두 key 옵션을 통해 정렬을 위한 함수를 지정할 수 있다. 일반 함수 또는 lambda함수를 이용할 수 있다.
 * 파이썬의 기본정렬은 팀소트(Timsort)를 이용한다.
 * [정렬 종류별로 시간복잡도 + 각 특징 정리](https://velog.io/@wan088/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC)
