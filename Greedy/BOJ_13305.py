@@ -12,3 +12,18 @@ for i in range(len(roads)):
   won += oil * roads[i]
 print(won)
   
+
+  
+N=int(input())
+distances = list(map(int, input().split()))
+prices = list(map(int, input().split()))
+
+now_price = prices[0]
+total_price = 0
+
+for i,distance in enumerate(distances):
+  total_price += distance*now_price
+  if prices[i+1] < now_price:
+    now_price = prices[i+1]
+
+print(total_price)
