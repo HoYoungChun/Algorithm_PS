@@ -41,11 +41,11 @@ class Solution:
         #런너를 이용해 역순 연결 리스트 구성
         while fast and fast.next:
             fast = fast.next.next #두칸씩 이동
-            rev,rev.next,slow = slow,rev,slow.next
+            rev,rev.next,slow = slow,rev,slow.next #한칸씩 이동
         if fast:
-            slow=slow.next #한칸씩 이동
+            slow=slow.next #입력값 홀수일때 slow 한칸 더 앞으로 이동
         
-        #팰린드롬 여부 확인
+        #팰린드롬 여부 확인(slow의 나머지 이동경로와 rev 비교)
         while rev and rev.val == slow.val:
             slow,rev = slow.next,rev.next
         return not rev
